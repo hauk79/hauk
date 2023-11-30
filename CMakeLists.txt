@@ -5,13 +5,21 @@ project(hauk)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
+# 라이브러리 설정
 set(LIBRARY_NAME ${PROJECT_NAME})
-set(PCH_FILE_HEADER "src/pch.h")
+set(PCH_FILE_HEADER "src/hauk/pch.h")
+
+# 소스 설정
+set(SRC_HAUK_GAME
+        src/hauk/game/Application.cpp
+)
 
 # 공유 라이브러리 빌드 설정
 add_library(${LIBRARY_NAME} SHARED
-        src/library.cpp
+        ${SRC_HAUK_GAME}
 )
+
+# 프리컴파일 헤더 설정
 target_precompile_headers(${LIBRARY_NAME}
         PRIVATE ${PCH_FILE_HEADER}
 )
@@ -22,6 +30,7 @@ target_include_directories(${LIBRARY_NAME}
         PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
+# 라이브러리 파일 이름 설정
 set_target_properties(${LIBRARY_NAME}
 PROPERTIES
 OUTPUT_NAME "hauk"
