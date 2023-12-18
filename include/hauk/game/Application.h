@@ -9,10 +9,16 @@ namespace hauk::game
 {
 	class Application
 	{
+		static const sf::Time TimePerFrame;
 	public:
 		Application();
+		void run();
 
 	private:
+		void processInput();
+		void update(sf::Time dt);
+		void render();
+
 		sf::RenderWindow m_window;
 	};
 } // hauk::game
