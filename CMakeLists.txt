@@ -13,10 +13,15 @@ set(PCH_FILE_HEADER "include/hauk/pch.h")
 set(SRC_HAUK_GAME
         src/hauk/game/Application.cpp
 )
+set(SRC_HAUK_GAME_STATES
+        src/hauk/game/states/StateStack.cpp
+        src/hauk/game/states/State.cpp
+)
 
 # 공유 라이브러리 빌드 설정
 add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME}
+        ${SRC_HAUK_GAME_STATES}
 )
 
 # 프리컴파일 헤더 설정
