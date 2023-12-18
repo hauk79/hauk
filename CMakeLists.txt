@@ -35,3 +35,12 @@ set_target_properties(${LIBRARY_NAME}
 PROPERTIES
 OUTPUT_NAME "hauk"
 )
+
+# Detect and add SFML
+find_package(SFML 2 COMPONENTS graphics window system audio network REQUIRED)
+# Find any version 2.X of SFML
+if (SFML_FOUND)
+    target_link_libraries(${LIBRARY_NAME}
+            sfml-graphics
+    )
+endif(SFML_FOUND)

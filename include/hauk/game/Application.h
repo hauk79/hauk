@@ -11,6 +11,9 @@ namespace hauk::game
 	{
 	public:
 		Application();
+
+	private:
+		sf::RenderWindow m_window;
 	};
 } // hauk::game
 

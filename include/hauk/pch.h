@@ -7,4 +7,7 @@
 
 #include <iostream>
 
+// SFML
+#include <SFML/Graphics.hpp>
+
 #endif //HAUK_PCH_H

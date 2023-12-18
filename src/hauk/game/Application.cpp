@@ -7,7 +7,7 @@
 namespace hauk::game
 {
 	Application::Application()
+	: m_window(sf::VideoMode(640, 480), "Application", sf::Style::Close)
 	{
-		std::cout << "Hello, World!" << std::endl;
 	}
 } // hauk::game
