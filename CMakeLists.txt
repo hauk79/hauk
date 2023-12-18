@@ -7,7 +7,7 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 # 라이브러리 설정
 set(LIBRARY_NAME ${PROJECT_NAME})
-set(PCH_FILE_HEADER "src/hauk/pch.h")
+set(PCH_FILE_HEADER "include/hauk/pch.h")
 
 # 소스 설정
 set(SRC_HAUK_GAME
@@ -21,7 +21,7 @@ add_library(${LIBRARY_NAME} SHARED
 
 # 프리컴파일 헤더 설정
 target_precompile_headers(${LIBRARY_NAME}
-        PRIVATE ${PCH_FILE_HEADER}
+        PUBLIC ${PCH_FILE_HEADER}
 )
 
 # 라이브러리를 포함하는 디렉토리 추가
