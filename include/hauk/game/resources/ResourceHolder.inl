@@ -1,0 +1,8 @@
+//
+// Created by hauk on 2023-12-19.
+//
+
+#ifndef HAUK_RESOURCEHOLDER_INL
+#define HAUK_RESOURCEHOLDER_INL
+
+#endif //HAUK_RESOURCEHOLDER_INL

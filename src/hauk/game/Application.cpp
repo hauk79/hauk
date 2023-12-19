@@ -10,7 +10,7 @@ namespace hauk::game
 
 	Application::Application()
 	: m_window(sf::VideoMode(640, 480), "Application", sf::Style::Close)
-	, m_stateStack(states::State::Context{m_window})
+	, m_stateStack(states::State::Context{m_window, m_textures})
 	{
 	}
 

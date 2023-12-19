@@ -6,6 +6,7 @@
 #define HAUK_STATE_HPP
 
 
+#include <hauk/game/resources/ResourceIdentifiers.hpp>
 
 namespace hauk::game::states
 {
@@ -15,9 +16,10 @@ namespace hauk::game::states
 	public:
 		struct Context
 		{
-			explicit Context(sf::RenderWindow& window);
+			Context(sf::RenderWindow& window, resources::TextureHolder& textures);
 
 			sf::RenderWindow* window;
+			resources::TextureHolder* textures;
 		};
 	};
 
