@@ -18,8 +18,6 @@ namespace hauk::game
 		m_staticsText.setFont(m_fonts.get(resources::Fonts::Main));
 		m_staticsText.setPosition(5.f, 5.f);
 		m_staticsText.setCharacterSize(10u);
-
-		registerStates();
 	}
 
 	void Application::run()
@@ -90,9 +88,5 @@ namespace hauk::game
 			statisticsUpdateTime -= sf::seconds(1.f);
 			statisticsNumFrames = 0;
 		}
-	}
-
-	void Application::registerStates()
-	{
 	}
 } // hauk::game

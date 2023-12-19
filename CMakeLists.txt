@@ -7,7 +7,7 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 # 라이브러리 설정
 set(LIBRARY_NAME ${PROJECT_NAME})
-set(PCH_FILE_HEADER "include/hauk/pch.hpp")
+set(PCH_FILE_HEADER "src/hauk/pch.hpp")
 
 # 소스 설정
 set(SRC_HAUK_GAME

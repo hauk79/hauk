@@ -24,7 +24,6 @@ namespace hauk::game
 		void render();
 
 		void updateStatistics(sf::Time dt);
-		void registerStates();
 
 		sf::RenderWindow m_window;
 		resources::TextureHolder m_textures;
