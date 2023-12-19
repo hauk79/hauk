@@ -14,7 +14,7 @@ namespace hauk::game
 }
 namespace hauk::game::states
 {
-
+	class StateStack;
 	class State
 	{
 	public:
@@ -31,6 +31,12 @@ namespace hauk::game::states
 			resources::FontHolder * fonts;
 			Player* player;
 		};
+
+		State(StateStack& stack, Context context);
+
+	private:
+		StateStack* m_stack;
+		Context m_context;
 	};
 
 } // hauk::game::states

@@ -9,6 +9,10 @@
 namespace hauk::game::states
 {
 	StateStack::StateStack(State::Context context)
+	: m_stack()
+	, m_pendingList()
+	, m_context(context)
+	, m_factories()
 	{
 
 	}
@@ -18,8 +22,19 @@ namespace hauk::game::states
 
 	}
 
-	template<typename T>
-	void StateStack::registerStack(States::ID stateID)
+	bool StateStack::isEmpty() const
+	{
+		return m_stack.empty();
+	}
+
+	void StateStack::pushState(States::ID stateID)
+	{
+		m_pendingList.emplace_back(Push, stateID);
+	}
+
+	StateStack::PendingChange::PendingChange(StateStack::Action action, States::ID stateID)
+	: action(action)
+	, stateID(stateID)
 	{
 
 	}

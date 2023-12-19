@@ -30,9 +30,10 @@ namespace hauk::game
 		resources::FontHolder m_fonts;
 		Player m_player;
 
-		states::StateStack m_stateStack;
-
 		sf::Text m_staticsText;
+
+	protected:
+		states::StateStack m_stateStack;
 	};
 } // hauk::game
 

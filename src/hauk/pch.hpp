@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <functional>
 
 // SFML
 #include <SFML/Graphics.hpp>

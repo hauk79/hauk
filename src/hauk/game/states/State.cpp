@@ -15,4 +15,11 @@ namespace hauk::game::states
 			, player(&player)
 	{
 	}
+
+	State::State(StateStack& stack, State::Context context)
+	: m_stack(&stack)
+	, m_context(context)
+	{
+
+	}
 } // hauk::game::states
