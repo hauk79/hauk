@@ -6,6 +6,7 @@
 #define HAUK_PCH_HPP
 
 #include <iostream>
+#include <cassert>
 
 // SFML
 #include <SFML/Graphics.hpp>

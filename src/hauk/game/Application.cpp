@@ -13,6 +13,9 @@ namespace hauk::game
 	, m_stateStack(states::State::Context{m_window, m_textures, m_fonts, m_player})
 	, m_staticsText()
 	{
+		m_fonts.load(resources::Fonts::Main, "media/hauk/fonts/Sansation.ttf");
+
+		m_staticsText.setFont(m_fonts.get(resources::Fonts::Main));
 		m_staticsText.setPosition(5.f, 5.f);
 		m_staticsText.setCharacterSize(10u);
 	}
