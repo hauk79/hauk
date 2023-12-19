@@ -15,10 +15,9 @@ namespace hauk::game::states
 	public:
 		struct Context
 		{
-			Context()
-			{
-				std::cout << "Context" << std::endl;
-			}
+			explicit Context(sf::RenderWindow& window);
+
+			sf::RenderWindow* window;
 		};
 	};
 
