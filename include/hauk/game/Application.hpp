@@ -23,12 +23,16 @@ namespace hauk::game
 		void update(sf::Time dt);
 		void render();
 
+		void updateStatistics(sf::Time dt);
+
 		sf::RenderWindow m_window;
 		resources::TextureHolder m_textures;
 		resources::FontHolder m_fonts;
 		Player m_player;
 
 		states::StateStack m_stateStack;
+
+		sf::Text m_staticsText;
 	};
 } // hauk::game
 

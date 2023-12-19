@@ -11,7 +11,10 @@ namespace hauk::game
 	Application::Application()
 	: m_window(sf::VideoMode(640, 480), "Application", sf::Style::Close)
 	, m_stateStack(states::State::Context{m_window, m_textures, m_fonts, m_player})
+	, m_staticsText()
 	{
+		m_staticsText.setPosition(5.f, 5.f);
+		m_staticsText.setCharacterSize(10u);
 	}
 
 	void Application::run()
@@ -31,6 +34,7 @@ namespace hauk::game
 				update(TimePerFrame);
 			}
 
+			updateStatistics(dt);
 			render();
 		}
 	}
@@ -56,6 +60,24 @@ namespace hauk::game
 	{
 		m_window.clear();
 
+		m_window.draw(m_staticsText);
+
 		m_window.display();
+	}
+
+	void Application::updateStatistics(sf::Time dt)
+	{
+		static sf::Time statisticsUpdateTime{};
+		static std::size_t statisticsNumFrames{};
+
+		statisticsUpdateTime += dt;
+		statisticsNumFrames += 1;
+		if (statisticsUpdateTime >= sf::seconds(1.f))
+		{
+			m_staticsText.setString("FPS: " + std::to_string(statisticsNumFrames));
+
+			statisticsUpdateTime -= sf::seconds(1.f);
+			statisticsNumFrames = 0;
+		}
 	}
 } // hauk::game
