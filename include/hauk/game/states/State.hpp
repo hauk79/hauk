@@ -18,6 +18,8 @@ namespace hauk::game::states
 	class State
 	{
 	public:
+		typedef std::unique_ptr<State> Ptr;
+
 		struct Context
 		{
 			Context(sf::RenderWindow& window,

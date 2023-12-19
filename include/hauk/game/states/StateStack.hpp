@@ -7,6 +7,7 @@
 
 
 #include "State.hpp"
+#include "StateIdentifiers.hpp"
 
 namespace hauk::game::states
 {
@@ -14,6 +15,19 @@ namespace hauk::game::states
 	{
 	public:
 		explicit StateStack(State::Context context);
+
+		template <typename T>
+		void registerStack(States::ID stateID);
+
+		void update(sf::Time dt);
+
+		[[nodiscard]] bool isEmpty() const
+		{
+			return m_stack.empty();
+		}
+
+	private:
+		std::vector<State::Ptr> m_stack;
 	};
 
 } // hauk::game::states

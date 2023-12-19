@@ -12,4 +12,15 @@ namespace hauk::game::states
 	{
 
 	}
+
+	void StateStack::update(sf::Time dt)
+	{
+
+	}
+
+	template<typename T>
+	void StateStack::registerStack(States::ID stateID)
+	{
+
+	}
 } // hauk::game::states
