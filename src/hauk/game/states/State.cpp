@@ -5,13 +5,14 @@
 #include "hauk/game/states/State.hpp"
 
 
-
 namespace hauk::game::states
 {
-	State::Context::Context(sf::RenderWindow& window, resources::TextureHolder& textures)
-	: window(&window)
-	, textures(&textures)
+	State::Context::Context(sf::RenderWindow& window, resources::TextureHolder& textures, resources::FontHolder& fonts,
+			Player& player)
+			: window(&window)
+			, textures(&textures)
+			, fonts(&fonts)
+			, player(&player)
 	{
-
 	}
 } // hauk::game::states

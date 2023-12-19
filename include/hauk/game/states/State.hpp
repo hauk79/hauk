@@ -8,6 +8,10 @@
 
 #include <hauk/game/resources/ResourceIdentifiers.hpp>
 
+namespace hauk::game
+{
+	class Player;
+}
 namespace hauk::game::states
 {
 
@@ -16,10 +20,14 @@ namespace hauk::game::states
 	public:
 		struct Context
 		{
-			Context(sf::RenderWindow& window, resources::TextureHolder& textures);
+			Context(sf::RenderWindow& window,
+					resources::TextureHolder& textures, resources::FontHolder& fonts,
+					Player& player);
 
 			sf::RenderWindow* window;
 			resources::TextureHolder* textures;
+			resources::FontHolder * fonts;
+			Player* player;
 		};
 	};
 

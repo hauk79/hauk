@@ -7,6 +7,7 @@
 
 #include <hauk/game/states/StateStack.hpp>
 #include <hauk/game/resources/ResourceIdentifiers.hpp>
+#include "Player.hpp"
 
 namespace hauk::game
 {
@@ -24,6 +25,8 @@ namespace hauk::game
 
 		sf::RenderWindow m_window;
 		resources::TextureHolder m_textures;
+		resources::FontHolder m_fonts;
+		Player m_player;
 
 		states::StateStack m_stateStack;
 	};
