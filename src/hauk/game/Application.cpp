@@ -2,7 +2,7 @@
 // Created by hauk on 2023-11-30.
 //
 
-#include "hauk/game/Application.h"
+#include "hauk/game/Application.hpp"
 
 namespace hauk::game
 {

@@ -2,12 +2,12 @@
 // Created by hauk on 2023-11-30.
 //
 
-#ifndef HAUK_PCH_H
-#define HAUK_PCH_H
+#ifndef HAUK_PCH_HPP
+#define HAUK_PCH_HPP
 
 #include <iostream>
 
 // SFML
 #include <SFML/Graphics.hpp>
 
-#endif //HAUK_PCH_H
+#endif //HAUK_PCH_HPP

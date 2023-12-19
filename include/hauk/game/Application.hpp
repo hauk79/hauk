@@ -5,7 +5,7 @@
 #ifndef HAUK_GAME_APPLICATION_H
 #define HAUK_GAME_APPLICATION_H
 
-#include <hauk/game/states/StateStack.h>
+#include <hauk/game/states/StateStack.hpp>
 
 namespace hauk::game
 {

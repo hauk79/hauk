@@ -2,11 +2,11 @@
 // Created by hauk on 2023-12-18.
 //
 
-#ifndef HAUK_STATESTACK_H
-#define HAUK_STATESTACK_H
+#ifndef HAUK_STATESTACK_HPP
+#define HAUK_STATESTACK_HPP
 
 
-#include "State.h"
+#include "State.hpp"
 
 namespace hauk::game::states
 {
@@ -18,4 +18,4 @@ namespace hauk::game::states
 
 } // hauk::game::states
 
-#endif //HAUK_STATESTACK_H
+#endif //HAUK_STATESTACK_HPP
