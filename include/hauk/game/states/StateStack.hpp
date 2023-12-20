@@ -53,15 +53,7 @@ namespace hauk::game::states
 		State::Context m_context;
 		std::map<States::ID, std::function<State::Ptr()>> m_factories;
 	};
-
-	template<typename T>
-	void StateStack::registerState(States::ID stateID)
-	{
-		m_factories[stateID] = [this]()
-		{
-			return State::Ptr(new T(*this, m_context));
-		};
-	}
 } // hauk::game::states
 
+#include "StateStack.inl"
 #endif //HAUK_GAME_STATES_STATESTACK_HPP
