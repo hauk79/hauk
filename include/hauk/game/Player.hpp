@@ -2,20 +2,18 @@
 // Created by hauk on 2023-12-19.
 //
 
-#ifndef HAUK_PLAYER_HPP
-#define HAUK_PLAYER_HPP
+#ifndef HAUK_GAME_PLAYER_HPP
+#define HAUK_GAME_PLAYER_HPP
 
-namespace hauk
+
+namespace hauk::game
 {
-	namespace game
+
+	class Player
 	{
 
-		class Player
-		{
+	};
 
-		};
+} // hauk::game
 
-	} // hauk
-} // game
-
-#endif //HAUK_PLAYER_HPP
+#endif //HAUK_GAME_PLAYER_HPP

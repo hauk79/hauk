@@ -2,8 +2,8 @@
 // Created by hauk on 2023-12-19.
 //
 
-#ifndef HAUK_RESOURCEIDENTIFIERS_HPP
-#define HAUK_RESOURCEIDENTIFIERS_HPP
+#ifndef HAUK_GAME_RESOURCE_RESOURCEIDENTIFIERS_HPP
+#define HAUK_GAME_RESOURCE_RESOURCEIDENTIFIERS_HPP
 
 #include "ResourceHolder.hpp"
 
@@ -33,4 +33,4 @@ namespace hauk::game::resources
 	typedef ResourceHolder<sf::Font, Fonts::ID> FontHolder;
 }
 
-#endif //HAUK_RESOURCEIDENTIFIERS_HPP
+#endif //HAUK_GAME_RESOURCE_RESOURCEIDENTIFIERS_HPP
