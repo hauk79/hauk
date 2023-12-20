@@ -26,13 +26,14 @@ namespace hauk::game
 		void updateStatistics(sf::Time dt);
 
 		sf::RenderWindow m_window;
-		resources::TextureHolder m_textures;
 		resources::FontHolder m_fonts;
 		Player m_player;
 
 		sf::Text m_staticsText;
 
 	protected:
+		resources::TextureHolder m_textures;
+
 		states::StateStack m_stateStack;
 	};
 } // hauk::game
