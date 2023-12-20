@@ -31,10 +31,13 @@ namespace hauk::game::states
 		void handleEvent(const sf::Event& event);
 
 		void pushState(States::ID stateID);
+		void popState();
+		void clearStates();
 
 		[[nodiscard]] bool isEmpty() const;
 
 	private:
+		State::Ptr createState(States::ID stateID);
 		void applyPendingChange();
 
 		struct PendingChange

@@ -3,6 +3,7 @@
 //
 
 #include "hauk/game/states/State.hpp"
+#include "hauk/game/states/StateStack.hpp"
 
 
 namespace hauk::game::states
@@ -21,5 +22,20 @@ namespace hauk::game::states
 	, m_context(context)
 	{
 
+	}
+
+	void State::requestStackPush(States::ID stateID)
+	{
+		m_stack->pushState(stateID);
+	}
+
+	void State::requestStackPop()
+	{
+		m_stack->popState();
+	}
+
+	void State::requestStateClear()
+	{
+		m_stack->clearStates();
 	}
 } // hauk::game::states
