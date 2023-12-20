@@ -24,15 +24,19 @@ namespace hauk::game::states
 		explicit StateStack(State::Context context);
 
 		template <typename T>
-		void registerStack(States::ID stateID);
+		void registerState(States::ID stateID);
 
 		void update(sf::Time dt);
+		void draw();
+		void handleEvent(const sf::Event& event);
 
 		void pushState(States::ID stateID);
 
 		[[nodiscard]] bool isEmpty() const;
 
 	private:
+		void applyPendingChange();
+
 		struct PendingChange
 		{
 			explicit PendingChange(Action action, States::ID stateID = States::None);
@@ -48,7 +52,7 @@ namespace hauk::game::states
 	};
 
 	template<typename T>
-	void StateStack::registerStack(States::ID stateID)
+	void StateStack::registerState(States::ID stateID)
 	{
 		m_factories[stateID] = [this]()
 		{

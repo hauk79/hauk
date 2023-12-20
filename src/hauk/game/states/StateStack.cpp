@@ -19,7 +19,40 @@ namespace hauk::game::states
 
 	void StateStack::update(sf::Time dt)
 	{
+		// Iterate from top to bottom, stop as soon as update() returns false
+		for (auto itr{m_stack.rbegin()}; itr != m_stack.rend(); ++itr)
+		{
+			if (!(*itr)->update(dt))
+				break;
+		}
 
+		applyPendingChange();
+	}
+
+	void StateStack::draw()
+	{
+		// Draw all active states from bottom to top
+		for (auto& state : m_stack)
+		{
+			state->draw();
+		}
+	}
+
+	void StateStack::handleEvent(const sf::Event& event)
+	{
+		// Iterate from top to bottom, stop as soon as handleEvent() returns false
+		for (auto itr = m_stack.rbegin(); itr != m_stack.rend(); ++itr)
+		{
+			if (!(*itr)->handleEvent(event))
+				break;
+		}
+
+		applyPendingChange();
+	}
+
+	void StateStack::pushState(States::ID stateID)
+	{
+		m_pendingList.emplace_back(Push, stateID);
 	}
 
 	bool StateStack::isEmpty() const
@@ -27,9 +60,9 @@ namespace hauk::game::states
 		return m_stack.empty();
 	}
 
-	void StateStack::pushState(States::ID stateID)
+	void StateStack::applyPendingChange()
 	{
-		m_pendingList.emplace_back(Push, stateID);
+
 	}
 
 	StateStack::PendingChange::PendingChange(StateStack::Action action, States::ID stateID)

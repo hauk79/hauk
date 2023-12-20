@@ -33,6 +33,11 @@ namespace hauk::game::states
 		};
 
 		State(StateStack& stack, Context context);
+		virtual ~State() = default;
+
+		virtual void draw() = 0;
+		virtual bool update(sf::Time dt) = 0;
+		virtual bool handleEvent(const sf::Event& event) = 0;
 
 	private:
 		StateStack* m_stack;

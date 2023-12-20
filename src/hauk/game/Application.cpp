@@ -53,10 +53,10 @@ namespace hauk::game
 		sf::Event event{};
 		while (m_window.pollEvent(event))
 		{
+			m_stateStack.handleEvent(event);
+
 			if (event.type == sf::Event::Closed)
-			{
 				m_window.close();
-			}
 		}
 	}
 
@@ -68,6 +68,8 @@ namespace hauk::game
 	void Application::render()
 	{
 		m_window.clear();
+
+		m_stateStack.draw();
 
 		m_window.draw(m_staticsText);
 
