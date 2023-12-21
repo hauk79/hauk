@@ -38,4 +38,4 @@ namespace hauk::game::state
 	{
 		m_stack->clearStates();
 	}
-} // hauk::game::states
+} // hauk::game::state

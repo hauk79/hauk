@@ -53,7 +53,7 @@ namespace hauk::game::state
 		State::Context m_context;
 		std::map<States::ID, std::function<State::Ptr()>> m_factories;
 	};
-} // hauk::game::states
+} // hauk::game::state
 
 #include "StateStack.inl"
 #endif //HAUK_GAME_STATE_STATESTACK_HPP

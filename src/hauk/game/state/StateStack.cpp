@@ -103,4 +103,4 @@ namespace hauk::game::state
 	{
 
 	}
-} // hauk::game::states
+} // hauk::game::state

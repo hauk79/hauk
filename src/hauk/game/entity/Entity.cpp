@@ -23,4 +23,4 @@ namespace hauk::game::entity
 	{
 		return m_velocity;
 	}
-} // hauk::game::entities
+} // hauk::game::entity

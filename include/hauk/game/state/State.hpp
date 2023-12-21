@@ -53,6 +53,6 @@ namespace hauk::game::state
 		Context m_context;
 	};
 
-} // hauk::game::states
+} // hauk::game::state
 
 #endif //HAUK_GAME_STATE_STATE_HPP

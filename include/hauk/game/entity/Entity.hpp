@@ -20,6 +20,6 @@ namespace hauk::game::entity
 		sf::Vector2f m_velocity;
 	};
 
-} // hauk::game::entities
+} // hauk::game::entity
 
 #endif //HAUK_GAME_ENTITY_ENTITY_HPP

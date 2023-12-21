@@ -23,7 +23,7 @@ namespace hauk::game::resource
 		std::map<Identifier, std::unique_ptr<Resource>> m_resourceMap;
 	};
 
-} // hauk::game::resources
+} // hauk::game::resource
 
 #include "ResourceHolder.inl"
 #endif //HAUK_GAME_RESOURCE_RESOURCEHOLDER_HPP
