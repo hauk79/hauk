@@ -1,0 +1,25 @@
+//
+// Created by hauk on 2023-12-21.
+//
+
+#ifndef HAUK_GAME_ENTITIES_ENTITY_HPP
+#define HAUK_GAME_ENTITIES_ENTITY_HPP
+
+
+
+namespace hauk::game::entities
+{
+
+	class Entity
+	{
+	public:
+		void setVelocity(sf::Vector2f  velocity);
+		void setVelocity(float vx, float vy);
+		[[nodiscard]] sf::Vector2f getVelocity() const;
+	private:
+		sf::Vector2f m_velocity;
+	};
+
+} // hauk::game::entities
+
+#endif //HAUK_GAME_ENTITIES_ENTITY_HPP

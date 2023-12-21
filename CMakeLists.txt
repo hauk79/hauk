@@ -24,6 +24,9 @@ set(SRC_HAUK_GAME_RESOURCES
 set(SRC_HAUK_GAME_UTIL
         src/hauk/game/util/util.cpp
 )
+set(SRC_HAUK_GAME_ENTITIES
+        src/hauk/game/entities/Entity.cpp
+)
 
 # 공유 라이브러리 빌드 설정
 add_library(${LIBRARY_NAME} SHARED
@@ -31,6 +34,7 @@ add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME_STATES}
         ${SRC_HAUK_GAME_RESOURCES}
         ${SRC_HAUK_GAME_UTIL}
+        ${SRC_HAUK_GAME_ENTITIES}
 )
 
 # 프리컴파일 헤더 설정
