@@ -2,12 +2,12 @@
 // Created by hauk on 2023-12-21.
 //
 
-#ifndef HAUK_GAME_ENTITIES_ENTITY_HPP
-#define HAUK_GAME_ENTITIES_ENTITY_HPP
+#ifndef HAUK_GAME_ENTITY_ENTITY_HPP
+#define HAUK_GAME_ENTITY_ENTITY_HPP
 
 
 
-namespace hauk::game::entities
+namespace hauk::game::entity
 {
 
 	class Entity
@@ -22,4 +22,4 @@ namespace hauk::game::entities
 
 } // hauk::game::entities
 
-#endif //HAUK_GAME_ENTITIES_ENTITY_HPP
+#endif //HAUK_GAME_ENTITY_ENTITY_HPP

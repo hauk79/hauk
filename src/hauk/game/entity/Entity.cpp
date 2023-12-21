@@ -2,11 +2,11 @@
 // Created by hauk on 2023-12-21.
 //
 
-#include "hauk/game/entities/Entity.hpp"
+#include "hauk/game/entity/Entity.hpp"
 
 
 
-namespace hauk::game::entities
+namespace hauk::game::entity
 {
 	void Entity::setVelocity(sf::Vector2f velocity)
 	{

@@ -5,8 +5,8 @@
 #ifndef HAUK_GAME_APPLICATION_H
 #define HAUK_GAME_APPLICATION_H
 
-#include <hauk/game/states/StateStack.hpp>
-#include <hauk/game/resources/ResourceIdentifiers.hpp>
+#include <hauk/game/state/StateStack.hpp>
+#include <hauk/game/resource/ResourceIdentifiers.hpp>
 #include "Player.hpp"
 
 namespace hauk::game
@@ -26,15 +26,15 @@ namespace hauk::game
 		void updateStatistics(sf::Time dt);
 
 		sf::RenderWindow m_window;
-		resources::FontHolder m_fonts;
+		resource::FontHolder m_fonts;
 		Player m_player;
 
 		sf::Text m_staticsText;
 
 	protected:
-		resources::TextureHolder m_textures;
+		resource::TextureHolder m_textures;
 
-		states::StateStack m_stateStack;
+		state::StateStack m_stateStack;
 	};
 } // hauk::game
 

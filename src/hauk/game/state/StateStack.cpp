@@ -2,11 +2,11 @@
 // Created by hauk on 2023-12-18.
 //
 
-#include "hauk/game/states/StateStack.hpp"
+#include "hauk/game/state/StateStack.hpp"
 
 
 
-namespace hauk::game::states
+namespace hauk::game::state
 {
 	StateStack::StateStack(State::Context context)
 	: m_stack()

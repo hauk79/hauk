@@ -2,18 +2,18 @@
 // Created by hauk on 2023-12-18.
 //
 
-#ifndef HAUK_GAME_STATES_STATE_HPP
-#define HAUK_GAME_STATES_STATE_HPP
+#ifndef HAUK_GAME_STATE_STATE_HPP
+#define HAUK_GAME_STATE_STATE_HPP
 
 
-#include <hauk/game/resources/ResourceIdentifiers.hpp>
+#include <hauk/game/resource/ResourceIdentifiers.hpp>
 #include "StateIdentifiers.hpp"
 
 namespace hauk::game
 {
 	class Player;
 }
-namespace hauk::game::states
+namespace hauk::game::state
 {
 	class StateStack;
 	class State
@@ -24,12 +24,12 @@ namespace hauk::game::states
 		struct Context
 		{
 			Context(sf::RenderWindow& window,
-					resources::TextureHolder& textures, resources::FontHolder& fonts,
+					resource::TextureHolder& textures, resource::FontHolder& fonts,
 					Player& player);
 
 			sf::RenderWindow* window;
-			resources::TextureHolder* textures;
-			resources::FontHolder * fonts;
+			resource::TextureHolder* textures;
+			resource::FontHolder * fonts;
 			Player* player;
 		};
 
@@ -55,4 +55,4 @@ namespace hauk::game::states
 
 } // hauk::game::states
 
-#endif //HAUK_GAME_STATES_STATE_HPP
+#endif //HAUK_GAME_STATE_STATE_HPP

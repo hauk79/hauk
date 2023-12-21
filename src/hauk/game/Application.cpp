@@ -10,12 +10,12 @@ namespace hauk::game
 
 	Application::Application()
 	: m_window(sf::VideoMode(640, 480), "Application", sf::Style::Close)
-	, m_stateStack(states::State::Context{m_window, m_textures, m_fonts, m_player})
+	, m_stateStack(state::State::Context{ m_window, m_textures, m_fonts, m_player})
 	, m_staticsText()
 	{
-		m_fonts.load(resources::Fonts::Main, "media/hauk/fonts/Sansation.ttf");
+		m_fonts.load(resource::Fonts::Main, "media/hauk/font/Sansation.ttf");
 
-		m_staticsText.setFont(m_fonts.get(resources::Fonts::Main));
+		m_staticsText.setFont(m_fonts.get(resource::Fonts::Main));
 		m_staticsText.setPosition(5.f, 5.f);
 		m_staticsText.setCharacterSize(10u);
 	}

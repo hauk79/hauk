@@ -7,7 +7,7 @@
 
 
 
-namespace hauk::game::resources
+namespace hauk::game::resource
 {
 
 	template <typename Resource, typename Identifier>

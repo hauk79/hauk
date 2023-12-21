@@ -5,7 +5,7 @@
 #ifndef HAUK_GAME_RESOURCE_RESOURCEHOLDER_INL
 #define HAUK_GAME_RESOURCE_RESOURCEHOLDER_INL
 
-namespace hauk::game::resources
+namespace hauk::game::resource
 {
 	template<typename Resource, typename Identifier>
 	void ResourceHolder<Resource, Identifier>::load(Identifier id, const std::string& filename)

@@ -7,7 +7,7 @@
 
 #include "ResourceHolder.hpp"
 
-namespace hauk::game::resources
+namespace hauk::game::resource
 {
 	namespace Textures
 	{

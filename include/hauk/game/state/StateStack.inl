@@ -2,10 +2,10 @@
 // Created by hauk on 2023-12-20.
 //
 
-#ifndef HAUK_GAME_STATES_STATESTACK_INL
-#define HAUK_GAME_STATES_STATESTACK_INL
+#ifndef HAUK_GAME_STATE_STATESTACK_INL
+#define HAUK_GAME_STATE_STATESTACK_INL
 
-namespace hauk::game::states
+namespace hauk::game::state
 {
 	template<typename T>
 	void StateStack::registerState(States::ID stateID)
@@ -17,4 +17,4 @@ namespace hauk::game::states
 	}
 }
 
-#endif //HAUK_GAME_STATES_STATESTACK_INL
+#endif //HAUK_GAME_STATE_STATESTACK_INL

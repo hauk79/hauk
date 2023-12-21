@@ -2,13 +2,13 @@
 // Created by hauk on 2023-12-18.
 //
 
-#include "hauk/game/states/State.hpp"
-#include "hauk/game/states/StateStack.hpp"
+#include "hauk/game/state/State.hpp"
+#include "hauk/game/state/StateStack.hpp"
 
 
-namespace hauk::game::states
+namespace hauk::game::state
 {
-	State::Context::Context(sf::RenderWindow& window, resources::TextureHolder& textures, resources::FontHolder& fonts,
+	State::Context::Context(sf::RenderWindow& window, resource::TextureHolder& textures, resource::FontHolder& fonts,
 			Player& player)
 			: window(&window)
 			, textures(&textures)

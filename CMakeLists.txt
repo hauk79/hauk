@@ -14,27 +14,27 @@ set(SRC_HAUK_GAME
         src/hauk/game/Application.cpp
         src/hauk/game/Player.cpp
 )
-set(SRC_HAUK_GAME_STATES
-        src/hauk/game/states/StateStack.cpp
-        src/hauk/game/states/State.cpp
+set(SRC_HAUK_GAME_STATE
+        src/hauk/game/state/StateStack.cpp
+        src/hauk/game/state/State.cpp
 )
-set(SRC_HAUK_GAME_RESOURCES
-        include/hauk/game/resources/ResourceIdentifiers.hpp
+set(SRC_HAUK_GAME_RESOURCE
+        include/hauk/game/resource/ResourceIdentifiers.hpp
 )
 set(SRC_HAUK_GAME_UTIL
         src/hauk/game/util/util.cpp
 )
-set(SRC_HAUK_GAME_ENTITIES
-        src/hauk/game/entities/Entity.cpp
+set(SRC_HAUK_GAME_ENTITY
+        src/hauk/game/entity/Entity.cpp
 )
 
 # 공유 라이브러리 빌드 설정
 add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME}
-        ${SRC_HAUK_GAME_STATES}
-        ${SRC_HAUK_GAME_RESOURCES}
+        ${SRC_HAUK_GAME_STATE}
+        ${SRC_HAUK_GAME_RESOURCE}
         ${SRC_HAUK_GAME_UTIL}
-        ${SRC_HAUK_GAME_ENTITIES}
+        ${SRC_HAUK_GAME_ENTITY}
 )
 
 # 프리컴파일 헤더 설정
