@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cassert>
 #include <functional>
+#include <array>
 
 // SFML
 #include <SFML/Graphics.hpp>

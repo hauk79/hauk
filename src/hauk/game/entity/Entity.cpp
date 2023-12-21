@@ -23,4 +23,9 @@ namespace hauk::game::entity
 	{
 		return m_velocity;
 	}
+
+	void Entity::updateCurrent(sf::Time dt)
+	{
+		move(m_velocity * dt.asSeconds());
+	}
 } // hauk::game::entity

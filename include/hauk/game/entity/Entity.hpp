@@ -6,16 +6,21 @@
 #define HAUK_GAME_ENTITY_ENTITY_HPP
 
 
+#include "SceneNode.hpp"
 
 namespace hauk::game::entity
 {
 
-	class Entity
+	class Entity : public SceneNode
 	{
 	public:
 		void setVelocity(sf::Vector2f  velocity);
 		void setVelocity(float vx, float vy);
 		[[nodiscard]] sf::Vector2f getVelocity() const;
+
+	private:
+		void updateCurrent(sf::Time dt) override;
+
 	private:
 		sf::Vector2f m_velocity;
 	};

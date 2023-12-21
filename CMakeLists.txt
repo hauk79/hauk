@@ -26,6 +26,8 @@ set(SRC_HAUK_GAME_UTIL
 )
 set(SRC_HAUK_GAME_ENTITY
         src/hauk/game/entity/Entity.cpp
+        src/hauk/game/entity/SceneNode.cpp
+        src/hauk/game/entity/SpriteNode.cpp
 )
 
 # 공유 라이브러리 빌드 설정

@@ -22,6 +22,16 @@ namespace hauk::game::resource
 	}
 
 	template<typename Resource, typename Identifier>
+	Resource& ResourceHolder<Resource, Identifier>::get(Identifier id)
+	{
+		auto found = m_resourceMap.find(id);
+		assert(found != m_resourceMap.end());
+
+		return *found->second;
+	}
+
+
+	template<typename Resource, typename Identifier>
 	const Resource& ResourceHolder<Resource, Identifier>::get(Identifier id) const
 	{
 		auto found = m_resourceMap.find(id);
