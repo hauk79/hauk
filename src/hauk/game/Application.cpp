@@ -38,9 +38,7 @@ namespace hauk::game
 
 				// Check inside this loop, because stack might be empty before update() call
 				if (m_stateStack.isEmpty())
-				{
 					m_window.close();
-				}
 			}
 
 			updateStatistics(dt);
@@ -71,6 +69,7 @@ namespace hauk::game
 
 		m_stateStack.draw();
 
+		m_window.setView(m_window.getDefaultView());
 		m_window.draw(m_staticsText);
 
 		m_window.display();
