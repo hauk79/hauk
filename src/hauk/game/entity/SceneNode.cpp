@@ -92,7 +92,7 @@ namespace hauk::game::entity
 	void SceneNode::onCommand(const input::Command& command, sf::Time dt)
 	{
 		// Command current node, if category matches
-		if (command.category && getCategory())
+		if (command.category & getCategory())
 			command.action(*this, dt);
 
 		// Command children

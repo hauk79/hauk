@@ -13,6 +13,8 @@ namespace hauk::game
 	, m_stateStack(state::State::Context{ m_window, m_textures, m_fonts})
 	, m_staticsText()
 	{
+		m_window.setKeyRepeatEnabled(false);
+
 		m_fonts.load(resource::Fonts::Main, "media/hauk/font/Sansation.ttf");
 
 		m_staticsText.setFont(m_fonts.get(resource::Fonts::Main));
