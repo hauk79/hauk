@@ -33,6 +33,9 @@ set(SRC_HAUK_GAME_INPUT
         src/hauk/game/input/Command.cpp
         src/hauk/game/input/CommandQueue.cpp
 )
+set(SRC_HAUK_GAME_GUI
+        src/hauk/game/gui/Component.cpp
+)
 set(SRC_HAUK_THREAD
         src/hauk/thread/ParallelTask.cpp
 )
@@ -45,6 +48,7 @@ add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME_UTIL}
         ${SRC_HAUK_GAME_ENTITY}
         ${SRC_HAUK_GAME_INPUT}
+        ${SRC_HAUK_GAME_GUI}
 
         ${SRC_HAUK_THREAD}
 )
