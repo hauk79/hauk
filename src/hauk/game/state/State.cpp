@@ -8,12 +8,10 @@
 
 namespace hauk::game::state
 {
-	State::Context::Context(sf::RenderWindow& window, resource::TextureHolder& textures, resource::FontHolder& fonts,
-			Player& player)
+	State::Context::Context(sf::RenderWindow& window, resource::TextureHolder& textures, resource::FontHolder& fonts)
 			: window(&window)
 			, textures(&textures)
 			, fonts(&fonts)
-			, player(&player)
 	{
 	}
 

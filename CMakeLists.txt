@@ -12,7 +12,7 @@ set(PCH_FILE_HEADER "src/hauk/pch.hpp")
 # 소스 설정
 set(SRC_HAUK_GAME
         src/hauk/game/Application.cpp
-        src/hauk/game/Player.cpp
+        include/hauk/game/Player.hpp
 )
 set(SRC_HAUK_GAME_STATE
         src/hauk/game/state/StateStack.cpp
