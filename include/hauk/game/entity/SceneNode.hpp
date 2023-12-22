@@ -22,6 +22,9 @@ namespace hauk::game::entity
 
 		void update(sf::Time dt);
 
+		sf::Vector2f getWorldPosition() const;
+		sf::Transform getWorldTransform() const;
+
 	private:
 		virtual void updateCurrent(sf::Time dt);
 		void updateChildren(sf::Time dt);

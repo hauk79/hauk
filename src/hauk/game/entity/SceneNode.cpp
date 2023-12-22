@@ -72,4 +72,19 @@ namespace hauk::game::entity
 			child->draw(target, states);
 	}
 
+	sf::Vector2f SceneNode::getWorldPosition() const
+	{
+		return getWorldTransform() * sf::Vector2f{};
+	}
+
+	sf::Transform SceneNode::getWorldTransform() const
+	{
+		sf::Transform transform {sf::Transform::Identity};
+
+		for (const auto* node = this; node != nullptr; node = node->m_parent)
+			transform = node->getTransform() * transform;
+
+		return transform;
+	}
+
 } // hauk::game::entity
