@@ -6,6 +6,10 @@
 #define HAUK_GAME_ENTITY_SCENENODE_HPP
 
 
+namespace hauk::game::input
+{
+	struct Command;
+}
 
 namespace hauk::game::entity
 {
@@ -25,6 +29,8 @@ namespace hauk::game::entity
 		sf::Vector2f getWorldPosition() const;
 		sf::Transform getWorldTransform() const;
 
+		void onCommand(const input::Command& command, sf::Time dt);
+		virtual unsigned int getCategory() const;
 	private:
 		virtual void updateCurrent(sf::Time dt);
 		void updateChildren(sf::Time dt);

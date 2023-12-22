@@ -9,6 +9,7 @@
 #include <cassert>
 #include <functional>
 #include <array>
+#include <queue>
 
 // SFML
 #include <SFML/Graphics.hpp>

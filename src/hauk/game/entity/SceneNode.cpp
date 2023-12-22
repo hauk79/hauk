@@ -2,6 +2,8 @@
 // Created by hauk on 2023-12-21.
 //
 
+#include "hauk/game/input/Category.hpp"
+#include "hauk/game/input/Command.hpp"
 #include "hauk/game/entity/SceneNode.hpp"
 
 
@@ -85,6 +87,22 @@ namespace hauk::game::entity
 			transform = node->getTransform() * transform;
 
 		return transform;
+	}
+
+	void SceneNode::onCommand(const input::Command& command, sf::Time dt)
+	{
+		// Command current node, if category matches
+		if (command.category && getCategory())
+			command.action(*this, dt);
+
+		// Command children
+		for (Ptr& child:m_children)
+			child->onCommand(command, dt);
+	}
+
+	unsigned int SceneNode::getCategory() const
+	{
+		return game::input::Category::Scene;
 	}
 
 } // hauk::game::entity
