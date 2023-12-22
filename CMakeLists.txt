@@ -33,6 +33,9 @@ set(SRC_HAUK_GAME_INPUT
         src/hauk/game/input/Command.cpp
         src/hauk/game/input/CommandQueue.cpp
 )
+set(SRC_HAUK_THREAD
+        src/hauk/thread/ParallelTask.cpp
+)
 
 # 공유 라이브러리 빌드 설정
 add_library(${LIBRARY_NAME} SHARED
@@ -42,6 +45,8 @@ add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME_UTIL}
         ${SRC_HAUK_GAME_ENTITY}
         ${SRC_HAUK_GAME_INPUT}
+
+        ${SRC_HAUK_THREAD}
 )
 
 # 프리컴파일 헤더 설정
