@@ -16,6 +16,7 @@ namespace hauk::game::state::States
 		Game,
 		Loading,
 		Pause,
+		Settings,
 	};
 }
 

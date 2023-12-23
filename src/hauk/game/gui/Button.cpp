@@ -20,7 +20,8 @@ namespace hauk::game::gui
 	{
 		m_sprite.setTexture(m_normalTexture);
 
-		m_text.setPosition(sf::Vector2f(m_normalTexture.getSize() / 2u));
+		sf::FloatRect bounds = m_sprite.getLocalBounds();
+		m_text.setPosition(bounds.width / 2.f, bounds.height / 2.f);
 	}
 
 	void Button::setCallback(Button::Callback callback)
