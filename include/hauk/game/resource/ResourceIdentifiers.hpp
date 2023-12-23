@@ -17,6 +17,9 @@ namespace hauk::game::resource
 			Raptor,
 			Desert,
 			TitleScreen,
+			ButtonNormal,
+			ButtonSelected,
+			ButtonPressed,
 		};
 
 	}
