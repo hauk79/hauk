@@ -17,6 +17,10 @@ namespace hauk::game
 
 		m_fonts.load(resource::Fonts::Main, "media/hauk/font/Sansation.ttf");
 
+		m_textures.load(resource::Textures::ButtonNormal, "media/hauk/texture/ButtonNormal.png");
+		m_textures.load(resource::Textures::ButtonSelected, "media/hauk/texture/ButtonSelected.png");
+		m_textures.load(resource::Textures::ButtonPressed, "media/hauk/texture/ButtonPressed.png");
+
 		m_staticsText.setFont(m_fonts.get(resource::Fonts::Main));
 		m_staticsText.setPosition(5.f, 5.f);
 		m_staticsText.setCharacterSize(10u);
