@@ -35,6 +35,7 @@ set(SRC_HAUK_GAME_INPUT
 )
 set(SRC_HAUK_GAME_GUI
         src/hauk/game/gui/Component.cpp
+        src/hauk/game/gui/Container.cpp
 )
 set(SRC_HAUK_THREAD
         src/hauk/thread/ParallelTask.cpp
