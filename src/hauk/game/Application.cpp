@@ -2,15 +2,16 @@
 // Created by hauk on 2023-11-30.
 //
 
+#include <hauk/game/Player.hpp>
 #include "hauk/game/Application.hpp"
 
 namespace hauk::game
 {
 	const sf::Time Application::TimePerFrame{sf::seconds(1.f/60.f)};
 
-	Application::Application()
+	Application::Application(Player* player)
 	: m_window(sf::VideoMode(640, 480), "Application", sf::Style::Close)
-	, m_stateStack(state::State::Context{ m_window, m_textures, m_fonts})
+	, m_stateStack(state::State::Context{ m_window, m_textures, m_fonts, player})
 	, m_staticsText()
 	{
 		m_window.setKeyRepeatEnabled(false);

@@ -14,7 +14,7 @@ namespace hauk::game
 	{
 		static const sf::Time TimePerFrame;
 	public:
-		Application();
+		explicit Application(Player* player);
 		void run();
 
 	private:

@@ -9,6 +9,9 @@ namespace hauk::game::util
 {
 	template <typename T>
 	void centerOrigin(T& target);
+
+	// Convert enumerators to strings
+	std::string toString(sf::Keyboard::Key key);
 }
 
 #include "util.inl"

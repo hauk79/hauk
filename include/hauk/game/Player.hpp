@@ -20,6 +20,8 @@ namespace hauk::game
 	public:
 		virtual void handleEvent(const sf::Event& event, input::CommandQueue& commands) = 0;
 		virtual void handleRealtimeInput(input::CommandQueue& commands) = 0;
+		virtual void assignKey(std::size_t action, sf::Keyboard::Key key) = 0;
+		[[nodiscard]] virtual sf::Keyboard::Key getAssignedKey(std::size_t action) const = 0;
 	};
 
 } // hauk::game
