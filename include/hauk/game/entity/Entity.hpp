@@ -14,17 +14,25 @@ namespace hauk::game::entity
 	class Entity : public SceneNode
 	{
 	public:
+		explicit Entity(int hitpoints);
+
 		void setVelocity(sf::Vector2f  velocity);
 		void setVelocity(float vx, float vy);
 		void accelerate(sf::Vector2f  velocity);
 		void accelerate(float vx, float vy);
 		[[nodiscard]] sf::Vector2f getVelocity() const;
 
+		int getHitpoints() const;
+		void repair(int points);
+		void damage(int points);
+		void destroy();
+		bool isDestroyed() const;
 	private:
 		void updateCurrent(sf::Time dt) override;
 
 	private:
 		sf::Vector2f m_velocity;
+		int m_hitpoints;
 	};
 
 } // hauk::game::entity
