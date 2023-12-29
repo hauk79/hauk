@@ -28,6 +28,7 @@ set(SRC_HAUK_GAME_ENTITY
         src/hauk/game/entity/Entity.cpp
         src/hauk/game/entity/SceneNode.cpp
         src/hauk/game/entity/SpriteNode.cpp
+        src/hauk/game/entity/TextNode.cpp
 )
 set(SRC_HAUK_GAME_INPUT
         src/hauk/game/input/Command.cpp
@@ -41,6 +42,8 @@ set(SRC_HAUK_GAME_GUI
 )
 set(SRC_HAUK_THREAD
         src/hauk/thread/ParallelTask.cpp
+        src/hauk/game/entity/TextNode.cpp
+        src/hauk/game/entity/TextNode.hpp
 )
 
 # 공유 라이브러리 빌드 설정
