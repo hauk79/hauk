@@ -42,8 +42,6 @@ set(SRC_HAUK_GAME_GUI
 )
 set(SRC_HAUK_THREAD
         src/hauk/thread/ParallelTask.cpp
-        src/hauk/game/entity/TextNode.cpp
-        src/hauk/game/entity/TextNode.hpp
 )
 
 # 공유 라이브러리 빌드 설정
