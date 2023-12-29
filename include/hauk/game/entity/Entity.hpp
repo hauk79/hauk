@@ -27,7 +27,7 @@ namespace hauk::game::entity
 		void damage(int points);
 		void destroy();
 		bool isDestroyed() const;
-	private:
+	protected:
 		void updateCurrent(sf::Time dt) override;
 
 	private:
