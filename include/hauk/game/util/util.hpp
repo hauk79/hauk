@@ -12,6 +12,10 @@ namespace hauk::game::util
 
 	// Convert enumerators to strings
 	std::string toString(sf::Keyboard::Key key);
+
+	// Degree/radian conversion
+	float toDegree(float radian);
+	float toRadian(float degree);
 }
 
 #include "util.inl"
