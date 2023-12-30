@@ -16,6 +16,10 @@ namespace hauk::game::util
 	// Degree/radian conversion
 	float toDegree(float radian);
 	float toRadian(float degree);
+
+	// Vector operations
+	float			length(sf::Vector2f vector);
+	sf::Vector2f	unitVector(sf::Vector2f vector);
 }
 
 #include "util.inl"
