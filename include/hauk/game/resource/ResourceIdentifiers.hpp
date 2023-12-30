@@ -13,11 +13,7 @@ namespace hauk::game::resource
 	{
 		enum ID
 		{
-			Eagle,
-			Raptor,
-			Desert,
-			TitleScreen,
-			ButtonNormal,
+			ButtonNormal = 100000,
 			ButtonSelected,
 			ButtonPressed,
 		};
@@ -28,12 +24,12 @@ namespace hauk::game::resource
 	{
 		enum ID
 		{
-			Main,
+			Main = 100000,
 		};
 	}
 
-	typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
-	typedef ResourceHolder<sf::Font, Fonts::ID> FontHolder;
+	typedef ResourceHolder<sf::Texture, size_t> TextureHolder;
+	typedef ResourceHolder<sf::Font, size_t> FontHolder;
 }
 
 #endif //HAUK_GAME_RESOURCE_RESOURCEIDENTIFIERS_HPP
