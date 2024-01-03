@@ -28,7 +28,7 @@ namespace hauk::game::entity
 		void destroy();
 		bool isDestroyed() const;
 	protected:
-		void updateCurrent(sf::Time dt) override;
+		virtual void updateCurrent(sf::Time dt, input::CommandQueue& commands) override;
 
 	private:
 		sf::Vector2f m_velocity;

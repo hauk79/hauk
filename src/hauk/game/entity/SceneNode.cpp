@@ -36,21 +36,21 @@ namespace hauk::game::entity
 		return result;
 	}
 
-	void SceneNode::update(sf::Time dt)
+	void SceneNode::update(sf::Time dt, input::CommandQueue& commands)
 	{
-		updateCurrent(dt);
-		updateChildren(dt);
+		updateCurrent(dt, commands);
+		updateChildren(dt, commands);
 	}
 
-	void SceneNode::updateCurrent(sf::Time dt)
+	void SceneNode::updateCurrent(sf::Time dt, input::CommandQueue& commands)
 	{
 		// Do nothing by default
 	}
 
-	void SceneNode::updateChildren(sf::Time dt)
+	void SceneNode::updateChildren(sf::Time dt, input::CommandQueue& commands)
 	{
 		for (Ptr& child:m_children)
-			child->update(dt);
+			child->update(dt, commands);
 	}
 
 	void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -6,6 +6,8 @@
 #define HAUK_GAME_ENTITY_SCENENODE_HPP
 
 
+#include <hauk/game/input/CommandQueue.hpp>
+
 namespace hauk::game::input
 {
 	struct Command;
@@ -24,7 +26,7 @@ namespace hauk::game::entity
 		void attachChild(Ptr child);
 		Ptr detachChild(const SceneNode& node);
 
-		void update(sf::Time dt);
+		void update(sf::Time dt, input::CommandQueue& commands);
 
 		sf::Vector2f getWorldPosition() const;
 		sf::Transform getWorldTransform() const;
@@ -32,8 +34,8 @@ namespace hauk::game::entity
 		void onCommand(const input::Command& command, sf::Time dt);
 		virtual unsigned int getCategory() const;
 	private:
-		virtual void updateCurrent(sf::Time dt);
-		void updateChildren(sf::Time dt);
+		virtual void updateCurrent(sf::Time dt, input::CommandQueue& commands);
+		void updateChildren(sf::Time dt, input::CommandQueue& commands);
 
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const final;
 		virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;

@@ -68,7 +68,7 @@ namespace hauk::game::entity
 		return m_hitpoints <= 0;
 	}
 
-	void Entity::updateCurrent(sf::Time dt)
+	void Entity::updateCurrent(sf::Time dt, input::CommandQueue&)
 	{
 		move(m_velocity * dt.asSeconds());
 	}
