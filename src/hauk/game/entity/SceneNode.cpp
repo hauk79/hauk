@@ -2,7 +2,6 @@
 // Created by hauk on 2023-12-21.
 //
 
-#include "hauk/game/input/Category.hpp"
 #include "hauk/game/input/Command.hpp"
 #include "hauk/game/entity/SceneNode.hpp"
 
@@ -10,9 +9,10 @@
 
 namespace hauk::game::entity
 {
-	SceneNode::SceneNode()
+	SceneNode::SceneNode(input::Category::Type category)
 	: m_children()
 	, m_parent(nullptr)
+	, m_defaultCategory(category)
 	{
 
 	}
@@ -102,7 +102,7 @@ namespace hauk::game::entity
 
 	unsigned int SceneNode::getCategory() const
 	{
-		return game::input::Category::Scene;
+		return m_defaultCategory;
 	}
 
 } // hauk::game::entity

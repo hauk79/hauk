@@ -7,6 +7,7 @@
 
 
 #include <hauk/game/input/CommandQueue.hpp>
+#include "hauk/game/input/Category.hpp"
 
 namespace hauk::game::input
 {
@@ -21,7 +22,7 @@ namespace hauk::game::entity
 	public:
 		typedef std::unique_ptr<SceneNode> Ptr;
 
-		SceneNode();
+		explicit SceneNode(input::Category::Type category = input::Category::None);
 
 		void attachChild(Ptr child);
 		Ptr detachChild(const SceneNode& node);
@@ -44,6 +45,7 @@ namespace hauk::game::entity
 
 		std::vector<Ptr> m_children;
 		SceneNode* m_parent;
+		input::Category::Type m_defaultCategory;
 	};
 
 } // hauk::game::entity
