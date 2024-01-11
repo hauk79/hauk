@@ -9,7 +9,7 @@
 
 namespace hauk::game::entity
 {
-	SceneNode::SceneNode(input::Category::Type category)
+	SceneNode::SceneNode(unsigned int category)
 	: m_children()
 	, m_parent(nullptr)
 	, m_defaultCategory(category)
