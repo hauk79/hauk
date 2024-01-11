@@ -48,6 +48,7 @@ namespace hauk::game::entity
 		unsigned int m_defaultCategory;
 	};
 
+	float	distance(const SceneNode& lhs, const SceneNode& rhs);
 } // hauk::game::entity
 
 #endif //HAUK_GAME_ENTITY_SCENENODE_HPP

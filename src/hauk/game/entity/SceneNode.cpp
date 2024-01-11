@@ -2,6 +2,7 @@
 // Created by hauk on 2023-12-21.
 //
 
+#include <hauk/game/util/util.hpp>
 #include "hauk/game/input/Command.hpp"
 #include "hauk/game/entity/SceneNode.hpp"
 
@@ -105,4 +106,8 @@ namespace hauk::game::entity
 		return m_defaultCategory;
 	}
 
+	float distance(const SceneNode& lhs, const SceneNode& rhs)
+	{
+		return  util::length(lhs.getWorldPosition() - rhs.getWorldPosition());
+	}
 } // hauk::game::entity
