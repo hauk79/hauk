@@ -24,34 +24,34 @@ namespace hauk::game::state
 		explicit StateStack(State::Context context);
 
 		template <typename T>
-		void registerState(States::ID stateID);
+		void registerState(State::ID stateID);
 
 		void update(sf::Time dt);
 		void draw();
 		void handleEvent(const sf::Event& event);
 
-		void pushState(States::ID stateID);
+		void pushState(State::ID stateID);
 		void popState();
 		void clearStates();
 
 		[[nodiscard]] bool isEmpty() const;
 
 	private:
-		State::Ptr createState(States::ID stateID);
+		State::Ptr createState(State::ID stateID);
 		void applyPendingChange();
 
 		struct PendingChange
 		{
-			explicit PendingChange(Action action, States::ID stateID = States::None);
+			explicit PendingChange(Action action, State::ID stateID = States::None);
 
 			Action action;
-			States::ID stateID;
+			State::ID stateID;
 		};
 		std::vector<State::Ptr> m_stack;
 		std::vector<PendingChange> m_pendingList;
 
 		State::Context m_context;
-		std::map<States::ID, std::function<State::Ptr()>> m_factories;
+		std::map<State::ID, std::function<State::Ptr()>> m_factories;
 	};
 } // hauk::game::state
 

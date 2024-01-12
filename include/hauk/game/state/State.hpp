@@ -20,6 +20,7 @@ namespace hauk::game::state
 	{
 	public:
 		typedef std::unique_ptr<State> Ptr;
+		typedef std::size_t ID;
 
 		struct Context
 		{
@@ -40,7 +41,7 @@ namespace hauk::game::state
 		virtual bool update(sf::Time dt) = 0;
 		virtual bool handleEvent(const sf::Event& event) = 0;
 	protected:
-		void requestStackPush(States::ID stateID);
+		void requestStackPush(ID stateID);
 		void requestStackPop();
 		void requestStateClear();
 

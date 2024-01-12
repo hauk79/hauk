@@ -48,7 +48,7 @@ namespace hauk::game::state
 		applyPendingChange();
 	}
 
-	void StateStack::pushState(States::ID stateID)
+	void StateStack::pushState(State::ID stateID)
 	{
 		m_pendingList.emplace_back(Push, stateID);
 	}
@@ -68,7 +68,7 @@ namespace hauk::game::state
 		return m_stack.empty();
 	}
 
-	State::Ptr StateStack::createState(States::ID stateID)
+	State::Ptr StateStack::createState(State::ID stateID)
 	{
 		auto found = m_factories.find(stateID);
 		assert(found != m_factories.end());
@@ -97,7 +97,7 @@ namespace hauk::game::state
 		m_pendingList.clear();
 	}
 
-	StateStack::PendingChange::PendingChange(StateStack::Action action, States::ID stateID)
+	StateStack::PendingChange::PendingChange(StateStack::Action action, State::ID stateID)
 	: action(action)
 	, stateID(stateID)
 	{

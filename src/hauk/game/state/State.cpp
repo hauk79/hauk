@@ -24,7 +24,7 @@ namespace hauk::game::state
 
 	}
 
-	void State::requestStackPush(States::ID stateID)
+	void State::requestStackPush(ID stateID)
 	{
 		m_stack->pushState(stateID);
 	}

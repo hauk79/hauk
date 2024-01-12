@@ -11,12 +11,6 @@ namespace hauk::game::state::States
 	enum ID
 	{
 		None,
-		Title,
-		Menu,
-		Game,
-		Loading,
-		Pause,
-		Settings,
 	};
 }
 
