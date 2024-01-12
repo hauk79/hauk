@@ -54,27 +54,6 @@ namespace hauk::game::entity
 			child->update(dt, commands);
 	}
 
-	void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
-	{
-		// Apply transform of current node
-		states.transform *= getTransform();
-
-		// Draw node and children with changed transform
-		drawCurrent(target, states);
-		drawChildren(target, states);
-	}
-
-	void SceneNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
-	{
-		// Do nothing by default
-	}
-
-	void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) const
-	{
-		for (const auto& child:m_children)
-			child->draw(target, states);
-	}
-
 	sf::Vector2f SceneNode::getWorldPosition() const
 	{
 		return getWorldTransform() * sf::Vector2f{};
@@ -138,6 +117,44 @@ namespace hauk::game::entity
 	{
 		// By default, scene node needn't be removed
 		return false;
+	}
+
+	void SceneNode::draw(sf::RenderTarget& target, sf::RenderStates states) const
+	{
+		// Apply transform of current node
+		states.transform *= getTransform();
+
+		// Draw node and children with changed transform
+		drawCurrent(target, states);
+		drawChildren(target, states);
+
+		// Draw bounding rectangle - disabled by default
+		drawBoundingRect(target, states);
+	}
+
+	void SceneNode::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
+	{
+		// Do nothing by default
+	}
+
+	void SceneNode::drawChildren(sf::RenderTarget& target, sf::RenderStates states) const
+	{
+		for (const auto& child:m_children)
+			child->draw(target, states);
+	}
+
+	void SceneNode::drawBoundingRect(sf::RenderTarget& target, sf::RenderStates states) const
+	{
+		sf::FloatRect rect = getBoundingRect();
+
+		sf::RectangleShape shape;
+		shape.setPosition(sf::Vector2f(rect.left, rect.top));
+		shape.setSize(sf::Vector2f(rect.width, rect.height));
+		shape.setFillColor(sf::Color::Transparent);
+		shape.setOutlineColor(sf::Color::Green);
+		shape.setOutlineThickness(1.f);
+
+		target.draw(shape);
 	}
 
 	bool collision(const SceneNode& lhs, const SceneNode& rhs)
