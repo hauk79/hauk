@@ -5,8 +5,7 @@
 #ifndef HAUK_GAME_PLAYER_HPP
 #define HAUK_GAME_PLAYER_HPP
 
-
-#include <SFML/Window/Event.hpp>
+#include <hauk/game/input/Command.hpp>
 
 namespace hauk::game::input
 {
@@ -26,11 +25,15 @@ namespace hauk::game
 		virtual void handleEvent(const sf::Event& event, input::CommandQueue& commands) = 0;
 		virtual void handleRealtimeInput(input::CommandQueue& commands) = 0;
 
-		virtual void assignKey(Action action, sf::Keyboard::Key key) = 0;
-		[[nodiscard]] virtual sf::Keyboard::Key getAssignedKey(Action action) const = 0;
+		virtual void assignKey(Action action, sf::Keyboard::Key key);
+		[[nodiscard]] virtual sf::Keyboard::Key getAssignedKey(Action action) const;
 
 		virtual void setMissionStatus(MissionStatus status);
 		[[nodiscard]] virtual MissionStatus getMissionStatus();
+
+	protected:
+		std::map<sf::Keyboard::Key, Action> m_keyBinding;
+		std::map<Action, input::Command> m_actionBinding;
 
 	private:
 		MissionStatus m_currentMissionStatus;

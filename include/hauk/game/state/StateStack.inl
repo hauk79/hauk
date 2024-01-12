@@ -8,7 +8,7 @@
 namespace hauk::game::state
 {
 	template<typename T>
-	void StateStack::registerState(StateID stateID)
+	void StateStack::registerState(State::ID stateID)
 	{
 		m_factories[stateID] = [this]()
 		{
