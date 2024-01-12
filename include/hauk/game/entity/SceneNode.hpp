@@ -21,6 +21,7 @@ namespace hauk::game::entity
 	{
 	public:
 		typedef std::unique_ptr<SceneNode> Ptr;
+		typedef std::pair<SceneNode*, SceneNode*> Pair;
 
 		explicit SceneNode(unsigned int category = Category::None);
 
@@ -34,6 +35,12 @@ namespace hauk::game::entity
 
 		void onCommand(const input::Command& command, sf::Time dt);
 		virtual unsigned int getCategory() const;
+
+		void checkSceneCollision(SceneNode& sceneGraph, std::set<Pair>& collisionPairs);
+		void checkNodeCollision(SceneNode& node, std::set<Pair>& collisionPairs);
+		virtual sf::FloatRect getBoundingRect() const;
+		virtual bool isMarkedForRemoval() const;
+		virtual bool isDestroyed() const;
 	private:
 		virtual void updateCurrent(sf::Time dt, input::CommandQueue& commands);
 		void updateChildren(sf::Time dt, input::CommandQueue& commands);
@@ -48,7 +55,8 @@ namespace hauk::game::entity
 		unsigned int m_defaultCategory;
 	};
 
-	float	distance(const SceneNode& lhs, const SceneNode& rhs);
+	bool collision(const SceneNode& lhs, const SceneNode& rhs);
+	float distance(const SceneNode& lhs, const SceneNode& rhs);
 } // hauk::game::entity
 
 #endif //HAUK_GAME_ENTITY_SCENENODE_HPP

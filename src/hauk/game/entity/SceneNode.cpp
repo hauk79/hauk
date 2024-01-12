@@ -106,6 +106,45 @@ namespace hauk::game::entity
 		return m_defaultCategory;
 	}
 
+	void SceneNode::checkSceneCollision(SceneNode& sceneGraph, std::set<Pair>& collisionPairs)
+	{
+		checkNodeCollision(sceneGraph, collisionPairs);
+
+		for (Ptr& child:sceneGraph.m_children)
+			checkSceneCollision(*child, collisionPairs);
+	}
+
+	void SceneNode::checkNodeCollision(SceneNode& node, std::set<Pair>& collisionPairs)
+	{
+		if (this != &node && collision(*this, node) && !isDestroyed() && !node.isDestroyed())
+			collisionPairs.insert(std::minmax(this, &node));
+
+		for (Ptr& child:m_children)
+			child->checkNodeCollision(node, collisionPairs);
+	}
+
+	sf::FloatRect SceneNode::getBoundingRect() const
+	{
+		return sf::FloatRect();
+	}
+
+	bool SceneNode::isMarkedForRemoval() const
+	{
+		// By default, remove node if entity is destroyed
+		return isDestroyed();
+	}
+
+	bool SceneNode::isDestroyed() const
+	{
+		// By default, scene node needn't be removed
+		return false;
+	}
+
+	bool collision(const SceneNode& lhs, const SceneNode& rhs)
+	{
+		return lhs.getBoundingRect().intersects(rhs.getBoundingRect());
+	}
+
 	float distance(const SceneNode& lhs, const SceneNode& rhs)
 	{
 		return  util::length(lhs.getWorldPosition() - rhs.getWorldPosition());

@@ -10,6 +10,7 @@
 #include <functional>
 #include <array>
 #include <queue>
+#include <set>
 
 // SFML
 #include <SFML/Graphics.hpp>
