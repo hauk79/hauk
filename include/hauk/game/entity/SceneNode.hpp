@@ -38,6 +38,7 @@ namespace hauk::game::entity
 
 		void checkSceneCollision(SceneNode& sceneGraph, std::set<Pair>& collisionPairs);
 		void checkNodeCollision(SceneNode& node, std::set<Pair>& collisionPairs);
+		void removeWrecks();
 		virtual sf::FloatRect getBoundingRect() const;
 		virtual bool isMarkedForRemoval() const;
 		virtual bool isDestroyed() const;

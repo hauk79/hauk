@@ -11,6 +11,7 @@
 #include <array>
 #include <queue>
 #include <set>
+#include <random>
 
 // SFML
 #include <SFML/Graphics.hpp>

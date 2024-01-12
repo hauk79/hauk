@@ -102,6 +102,17 @@ namespace hauk::game::entity
 			child->checkNodeCollision(node, collisionPairs);
 	}
 
+	void SceneNode::removeWrecks()
+	{
+		// Remove all children which request so
+		auto wreckfieldBegin = std::remove_if(m_children.begin(), m_children.end(),
+				std::mem_fn(&SceneNode::isMarkedForRemoval));
+		m_children.erase(wreckfieldBegin, m_children.end());
+
+		// Call function recursively for all remaining children
+		std::for_each(m_children.begin(), m_children.end(), std::mem_fn(&SceneNode::removeWrecks));
+	}
+
 	sf::FloatRect SceneNode::getBoundingRect() const
 	{
 		return sf::FloatRect();

@@ -17,6 +17,9 @@ namespace hauk::game::util
 	float toDegree(float radian);
 	float toRadian(float degree);
 
+	// Random number generation
+	int	randomInt(int exclusiveMax);
+
 	// Vector operations
 	float			length(sf::Vector2f vector);
 	sf::Vector2f	unitVector(sf::Vector2f vector);
