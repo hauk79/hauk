@@ -71,7 +71,7 @@ target_include_directories(${LIBRARY_NAME}
 # 라이브러리 파일 이름 설정
 set_target_properties(${LIBRARY_NAME}
 PROPERTIES
-OUTPUT_NAME "hauk"
+OUTPUT_NAME ${LIBRARY_NAME}
 )
 
 # Detect and add SFML
