@@ -13,9 +13,7 @@ namespace hauk::game::resource
 	{
 		enum ID
 		{
-			ButtonNormal = 100000,
-			ButtonSelected,
-			ButtonPressed,
+			Buttons = 100000,
 		};
 
 	}

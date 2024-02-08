@@ -36,14 +36,20 @@ namespace hauk::game::gui
 
 		void handleEvent(const sf::Event& event) override;
 
+		enum Type
+		{
+			Normal,
+			Selected,
+			Pressed,
+			ButtonCount,
+		};
+
 	private:
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+		void changeTexture(Type buttonType);
 
 	private:
 		Callback  m_callback;
-		const sf::Texture& m_normalTexture;
-		const sf::Texture& m_selectedTexture;
-		const sf::Texture& m_pressedTexture;
 		sf::Sprite m_sprite;
 		sf::Text m_text;
 		bool m_isToggle;

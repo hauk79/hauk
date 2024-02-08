@@ -11,14 +11,11 @@ namespace hauk::game::gui
 {
 	Button::Button(const resource::FontHolder& fonts, const resource::TextureHolder& textures)
 	: m_callback()
-	, m_normalTexture(textures.get(resource::Textures::ButtonNormal))
-	, m_selectedTexture(textures.get(resource::Textures::ButtonSelected))
-	, m_pressedTexture(textures.get(resource::Textures::ButtonPressed))
-	, m_sprite()
+	, m_sprite(textures.get(resource::Textures::Buttons))
 	, m_text("", fonts.get(resource::Fonts::Main), 16)
 	, m_isToggle(false)
 	{
-		m_sprite.setTexture(m_normalTexture);
+		changeTexture(Normal);
 
 		sf::FloatRect bounds = m_sprite.getLocalBounds();
 		m_text.setPosition(bounds.width / 2.f, bounds.height / 2.f);
@@ -48,13 +45,13 @@ namespace hauk::game::gui
 	void Button::select()
 	{
 		Component::select();
-		m_sprite.setTexture(m_selectedTexture);
+		changeTexture(Selected);
 	}
 
 	void Button::deselect()
 	{
 		Component::deselect();
-		m_sprite.setTexture(m_normalTexture);
+		changeTexture(Normal);
 	}
 
 	void Button::handleEvent(const sf::Event& event)
@@ -67,7 +64,7 @@ namespace hauk::game::gui
 
 		// If we are toggle then we should show that the button is pressed and thus "toggled".
 		if (m_isToggle)
-			m_sprite.setTexture(m_pressedTexture);
+			changeTexture(Pressed);
 
 		if (m_callback)
 			m_callback();
@@ -85,9 +82,9 @@ namespace hauk::game::gui
 		{
 			// Reset texture to right one depending on if we are selected or not.
 			if (isSelected())
-				m_sprite.setTexture(m_selectedTexture);
+				changeTexture(Selected);
 			else
-				m_sprite.setTexture(m_normalTexture);
+				changeTexture(Normal);
 		}
 	}
 
@@ -96,5 +93,11 @@ namespace hauk::game::gui
 		states.transform *= getTransform();
 		target.draw(m_sprite, states);
 		target.draw(m_text, states);
+	}
+
+	void Button::changeTexture(Button::Type buttonType)
+	{
+		sf::IntRect textureRect(0, 50 * buttonType, 200, 50);
+		m_sprite.setTextureRect(textureRect);
 	}
 } // hauk::game::gui
