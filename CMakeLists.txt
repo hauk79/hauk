@@ -30,6 +30,7 @@ set(SRC_HAUK_GAME_ENTITY
         src/hauk/game/entity/SpriteNode.cpp
         src/hauk/game/entity/TextNode.cpp
         src/hauk/game/entity/ParticleNode.cpp
+        src/hauk/game/entity/EmitterNode.cpp
 )
 set(SRC_HAUK_GAME_DATA
         src/hauk/game/data/ParticleData.cpp
