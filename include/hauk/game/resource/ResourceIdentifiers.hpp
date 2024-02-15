@@ -14,6 +14,7 @@ namespace hauk::game::resource
 		enum ID
 		{
 			Buttons = 100000,
+			Particle,
 		};
 
 	}

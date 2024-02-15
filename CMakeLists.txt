@@ -29,6 +29,10 @@ set(SRC_HAUK_GAME_ENTITY
         src/hauk/game/entity/SceneNode.cpp
         src/hauk/game/entity/SpriteNode.cpp
         src/hauk/game/entity/TextNode.cpp
+        src/hauk/game/entity/ParticleNode.cpp
+)
+set(SRC_HAUK_GAME_DATA
+        src/hauk/game/data/ParticleData.cpp
 )
 set(SRC_HAUK_GAME_INPUT
         src/hauk/game/input/Command.cpp
@@ -51,6 +55,7 @@ add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME_RESOURCE}
         ${SRC_HAUK_GAME_UTIL}
         ${SRC_HAUK_GAME_ENTITY}
+        ${SRC_HAUK_GAME_DATA}
         ${SRC_HAUK_GAME_INPUT}
         ${SRC_HAUK_GAME_GUI}
 
