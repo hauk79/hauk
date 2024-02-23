@@ -63,6 +63,11 @@ namespace hauk::game::entity
 		m_hitpoints = 0;
 	}
 
+	void Entity::remove()
+	{
+		destroy();
+	}
+
 	bool Entity::isDestroyed() const
 	{
 		return m_hitpoints <= 0;

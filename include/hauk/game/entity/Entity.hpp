@@ -26,9 +26,10 @@ namespace hauk::game::entity
 		void repair(int points);
 		void damage(int points);
 		void destroy();
-		bool isDestroyed() const;
+		virtual void remove();
+		bool isDestroyed() const override;
 	protected:
-		virtual void updateCurrent(sf::Time dt, input::CommandQueue& commands) override;
+		void updateCurrent(sf::Time dt, input::CommandQueue& commands) override;
 
 	private:
 		sf::Vector2f m_velocity;
