@@ -49,7 +49,6 @@ set(SRC_HAUK_GAME_GUI
 set(SRC_HAUK_GAME_EFFECT
         src/hauk/game/effect/PostEffect.cpp
         src/hauk/game/effect/BloomEffect.cpp
-        src/hauk/game/effect/BloomEffect.hpp
 )
 set(SRC_HAUK_THREAD
         src/hauk/thread/ParallelTask.cpp
