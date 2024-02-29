@@ -46,6 +46,11 @@ set(SRC_HAUK_GAME_GUI
         src/hauk/game/gui/Label.cpp
         src/hauk/game/gui/Button.cpp
 )
+set(SRC_HAUK_GAME_EFFECT
+        src/hauk/game/effect/PostEffect.cpp
+        src/hauk/game/effect/BloomEffect.cpp
+        src/hauk/game/effect/BloomEffect.hpp
+)
 set(SRC_HAUK_THREAD
         src/hauk/thread/ParallelTask.cpp
 )
@@ -60,6 +65,7 @@ add_library(${LIBRARY_NAME} SHARED
         ${SRC_HAUK_GAME_DATA}
         ${SRC_HAUK_GAME_INPUT}
         ${SRC_HAUK_GAME_GUI}
+        ${SRC_HAUK_GAME_EFFECT}
 
         ${SRC_HAUK_THREAD}
 )
